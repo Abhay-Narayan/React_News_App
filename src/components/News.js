@@ -28,7 +28,7 @@ export class News extends Component {
     document.title=`${this.capitalizeFirstLetter(this.props.category)} - NewsMan `;
   }
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9688dc9df4874b1ba4732c3737a7b5b3&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey={apiKey}&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parseddata = await data.json();
@@ -37,7 +37,7 @@ export class News extends Component {
   }
   handleprevclick = async()=>{
     
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9688dc9df4874b1ba4732c3737a7b5b3&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey={apiKey}&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parseddata = await data.json();
@@ -49,7 +49,7 @@ export class News extends Component {
   }
   handlenextclick = async()=>{
     
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9688dc9df4874b1ba4732c3737a7b5b3&page=${this.state.page+1}&pageSize=${this.props.pageSize }`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey={apiKey}&page=${this.state.page+1}&pageSize=${this.props.pageSize }`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parseddata = await data.json();
