@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import propTypes from 'prop-types'
-
+let apiKey=process.env.apiKey;
 
 export class News extends Component {
   static defaultProps={
